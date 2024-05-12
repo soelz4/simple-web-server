@@ -1,3 +1,3 @@
-module local-static-simple-web-server
+module simple-web-server
 
-go 1.22.1
+go 1.22.3
