@@ -8,7 +8,7 @@ import (
 
 // localhost:8080/form.html With Choosen Name and Address Then Click Submit
 // Parse localhost:8080/form.html With Written Name and Address Then Redirecting to localhost:8080/form
-// err = Error From Parse Result or Null
+// err ~> Error From Parse Result or Null
 func formHandler(w http.ResponseWriter, r *http.Request) {
 	// Error Handling
 	err := r.ParseForm()
@@ -49,7 +49,7 @@ func main() {
 	http.HandleFunc("/form", formHandler)
 	http.HandleFunc("/hello", helloHandler)
 
-	fmt.Printf("Starting Local Static Simple Web Server at PORT 8080\n")
+	fmt.Printf("Starting Local Simple Web Server at PORT 8080\n")
 	// Create Server - err = Error or Null
 	err := http.ListenAndServe(":8080", nil)
 	// Error Handling
