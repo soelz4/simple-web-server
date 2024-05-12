@@ -28,6 +28,10 @@ jobs:
   # 2nd Job (Stage)
   lint:
     name: "RUN LINT"
+    defaults:
+      run:
+        shell: bash
+    # OS
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +39,7 @@ jobs:
       - uses: actions/setup-go@v5
         name: "https://github.com/actions/setup-go"
         with:
-          go-version: '1.22'
+          go-version: "1.22"
       - uses: golangci/golangci-lint-action@v6
         name: "https://github.com/golangci/golangci-lint-action"
         with:
